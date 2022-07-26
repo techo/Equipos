@@ -171,14 +171,14 @@ function Register() {
   
   useEffect(() => {
     axios
-      .get("http://143.198.238.253:3001/api/regiones/paises")
+      .get("http://159.223.219.133:3001/api/regiones/paises")
       .then((res) => setPaises(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`http://143.198.238.253:3001/api/regiones/paises/${pais.value}/provincias`)
+      .get(`http://159.223.219.133:3001/api/regiones/paises/${pais.value}/provincias`)
       .then((res) => setProvincias(res.data))
       .catch((err) => console.log(err));
   }, [pais.value]);
@@ -186,7 +186,7 @@ function Register() {
   useEffect(() => {
     axios
       .get(
-        `http://143.198.238.253:3001/api/regiones/paises/${pais.value}/provincias/${provincia.value}/localidades`
+        `http://159.223.219.133:3001/api/regiones/paises/${pais.value}/provincias/${provincia.value}/localidades`
       )
       .then((res) => setLocalidades(res.data))
       .catch((err) => console.log(err));
@@ -251,7 +251,7 @@ function Register() {
     } else {
       if(imagenPerfil.name) data.append("fotoDePerfil", imagenPerfil, imagenPerfil.name)
       axios
-        .post("http://143.198.238.253:3001/api/usuarios/registrar", data)
+        .post("http://159.223.219.133:3001/api/usuarios/registrar", data)
         .then((res) => res.data)
         .then(() => successAlert())
         .then(() => navigate("/"))

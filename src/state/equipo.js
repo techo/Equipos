@@ -9,7 +9,7 @@ export const setEquipo = createAction("SET_EQUIPO");
 
 export const getEquipo = createAsyncThunk("GET_EQUIPO", ({ id, idpersona, token }) => {
   return axios
-    .get(`http://143.198.238.253:3001/api/equipos/${id}`, {headers: {authorization: token, idpersona}})
+    .get(`http://159.223.219.133:3001/api/equipos/${id}`, {headers: {authorization: token, idpersona}})
     .then((res) => res.data)
     .catch((err) => {console.log(err); return false});
 });
@@ -18,7 +18,7 @@ export const updateEquipo = createAsyncThunk(
   "UPDATE_EQUIPO",
   ({ id, form, token, idPersona }) => {
     return axios
-      .put(`http://143.198.238.253:3001/api/equipos/${id}`, form, {
+      .put(`http://159.223.219.133:3001/api/equipos/${id}`, form, {
         headers: {
           authorization: token,
           idPersona: idPersona,
@@ -34,7 +34,7 @@ export const deactivateEquipo = createAsyncThunk(
   ({ id, idPersona, token }) => {
     return axios
       .put(
-        `http://143.198.238.253:3001/api/equipos/desactivar/${id}`,
+        `http://159.223.219.133:3001/api/equipos/desactivar/${id}`,
         {},
         {
           headers: {
@@ -53,7 +53,7 @@ export const activateEquipo = createAsyncThunk(
   ({ id, idPersona, token }) => {
     return axios
       .put(
-        `http://143.198.238.253:3001/api/equipos/activar/${id}`,
+        `http://159.223.219.133:3001/api/equipos/activar/${id}`,
         {},
         {
           headers: {

@@ -10,7 +10,7 @@ export default function CrearArea() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://143.198.238.253:3001/api/areas/create", {
+      .post("http://159.223.219.133:3001/api/areas/create", {
         nombre: area,
       })
       .then(() => {

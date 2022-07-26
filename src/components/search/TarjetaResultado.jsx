@@ -50,7 +50,7 @@ export default function TarjetaResultado({ usuarios }) {
     setAgregando(true);
     axios
       .put(
-        `http://143.198.238.253:3001/api/equipos/${equipo.id}/${usuarios.idPersona}`,
+        `http://159.223.219.133:3001/api/equipos/${equipo.id}/${usuarios.idPersona}`,
         {},
         {
           headers: {

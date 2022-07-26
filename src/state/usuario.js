@@ -12,7 +12,7 @@ export const loginRequest = createAsyncThunk(
   "LOGIN",
   ({ mail, password, errorAlert,successAlert}) => {
     return axios
-      .post("http://143.198.238.253:3001/api/usuarios/login", {
+      .post("http://159.223.219.133:3001/api/usuarios/login", {
         mail,
         password,
       })
@@ -33,7 +33,7 @@ export const loginRequest = createAsyncThunk(
 export const logoutRequest = createAsyncThunk("LOGOUT", () => {
   return axios
     .post(
-      "http://143.198.238.253:3001/api/usuarios/logout",
+      "http://159.223.219.133:3001/api/usuarios/logout",
       {},
       {
         headers: {

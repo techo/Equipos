@@ -16,7 +16,7 @@ const isAdminOrCoordinatorHere = async (req, res, next) => {
         roleId: 1,
       },
     });
-    if (usrEnEquipo && usrEnEquipo?.activo) {
+    if (usrEnEquipo && usrEnEquipo.activo) {
       return isMiddleware? next() : res.send(true); 
     } else {
       const usuario = await Usuario.findOne({
@@ -53,7 +53,7 @@ const isAdminOrCoordinator = (req, res, next) => {
 const belongsToEquipo = (req, res, next) => {
   UsuarioEnEquipo.findOne({ where: { usuarioIdPersona: req.headers.idpersona, equipoId: req.params.id } })
   .then(usrEnEquipo => {
-      if (usrEnEquipo?.activo) return next();
+      if (usrEnEquipo.activo) return next();
       else isAdminOrCoordinatorHere(req, res, next);
     }
   );

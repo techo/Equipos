@@ -16,7 +16,7 @@ export const ConvertirAdminBtn = ({ user }) => {
       await axios({
         method: "PUT",
         headers: { idPersona: yo.idPersona },
-        url: `http://143.198.238.253:3001/api/usuarios/${target.idPersona}/toggleAdmin`,
+        url: `http://159.223.219.133:3001/api/usuarios/${target.idPersona}/toggleAdmin`,
       });
       dispatch(getById({ id: target.idPersona }));
       successAlert("Hecho!", 

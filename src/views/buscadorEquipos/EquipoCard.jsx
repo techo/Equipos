@@ -14,7 +14,7 @@ const EquipoCard = ({ equipo }) => {
 
   useEffect(() => {
     axios
-      .get(`http://143.198.238.253:3001/api/equipos/cantMiembros/${equipo.id}`)
+      .get(`http://159.223.219.133:3001/api/equipos/cantMiembros/${equipo.id}`)
       .then((res) => setMiembros(res.data.length))
       .catch((err) => console.log(err));
   }, [equipo.id]);
